@@ -1,4 +1,4 @@
-body {
+/* body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,67 +10,12 @@ body {
   margin: 0;
 }
 
-/* .container {
-  max-width: 400px;
-}
-
-.wheel-container {
-  width: 320px;
-  height: 320px;
-  position: relative;
-  margin: 20px auto;
-}
-
-.wheel {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: conic-gradient(
-    #ff6ec7 0deg 36deg,
-    #6ec6ff 36deg 72deg,
-    #ffec6e 72deg 108deg,
-    #6effb8 108deg 144deg,
-    #fca3ff 144deg 180deg,
-    #ffab6e 180deg 216deg,
-    #8e6eff 216deg 252deg,
-    #6effe1 252deg 288deg,
-    #ffa36e 288deg 324deg,
-    #c76eff 324deg 360deg
-  );
-  position: relative;
-  transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
-}
-
-.label {
-  position: absolute;
-  width: 50%;
-  left: 50%;
-  top: 50%;
-  transform-origin: 0% 50%;
-  font-size: 12px;
-  color: #fff;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-}
-
-.pointer {
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 30px solid #fff;
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-} */
 .wheel-container {
   width: 450px;
   height: 450px;
   position: relative;
   margin: 20px auto;
-  perspective: 1000px; /* Adds slight 3D depth */
+  perspective: 1000px; 
 }
 
 .wheel {
@@ -92,7 +37,7 @@ body {
   position: relative;
   transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
 
-  /* Shadows for realism */
+  
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 
               inset 0 0 20px rgba(255, 255, 255, 0.2);
 }
@@ -106,7 +51,7 @@ body {
   font-size: 14px;
   color: #fff;
   font-weight: bold;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.8); /* Stronger for contrast */
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.8); 
 }
 
 .pointer {
@@ -121,7 +66,7 @@ body {
   transform: translateX(-50%);
   z-index: 10;
 
-  /* Shadow for pointer */
+  
   filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
 }
 
@@ -135,7 +80,7 @@ body {
   cursor: pointer;
   font-weight: bold;
   margin-top: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Button shadow */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
 }
 
 #spinBtn:hover {
@@ -143,19 +88,112 @@ body {
   color: #fff;
 }
 
-/* #spinBtn {
+h2 {
+  margin-top: 20px;
+} */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(45deg, #ff6ec7, #6ec6ff);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+}
+
+.wheel-container {
+  width: 550px;   /* Increased for more space */
+  height: 550px;
+  position: relative;
+  margin: 20px auto;
+  perspective: 1000px;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ff6ec7 0deg 36deg,
+    #6ec6ff 36deg 72deg,
+    #ffec6e 72deg 108deg,
+    #6effb8 108deg 144deg,
+    #fca3ff 144deg 180deg,
+    #ffab6e 180deg 216deg,
+    #8e6eff 216deg 252deg,
+    #6effe1 252deg 288deg,
+    #ffa36e 288deg 324deg,
+    #c76eff 324deg 360deg
+  );
+  position: relative;
+  transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5),
+              inset 0 0 30px rgba(255, 255, 255, 0.2);
+  padding: 25px; /* Extra breathing room */
+}
+
+.label {
+  position: absolute;
+  width: 60%; /* More width for long text */
+  left: 50%;
+  top: 50%;
+  transform-origin: 0% 50%;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  text-align: left;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+  line-height: 1.3;
+  white-space: normal; /* Allows wrapping */
+  transform: rotate(calc(var(--i) * 36deg)) translateX(140px); /* Push text outward */
+}
+
+.pointer {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid #fff;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.5));
+}
+
+#spinBtn {
   background: #fff;
   color: #333;
-  padding: 10px 20px;
-  font-size: 18px;
-  border-radius: 10px;
+  padding: 14px 28px;
+  font-size: 20px;
+  border-radius: 12px;
   border: none;
   cursor: pointer;
   font-weight: bold;
   margin-top: 20px;
-} */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
 
+#spinBtn:hover {
+  background: #333;
+  color: #fff;
+}
 
 h2 {
   margin-top: 20px;
+}
+
+/* ✅ Responsive: Wheel scales down on smaller screens */
+@media (max-width: 768px) {
+  .wheel-container {
+    width: 350px;
+    height: 350px;
+  }
+  .label {
+    font-size: 12px;
+    transform: rotate(calc(var(--i) * 36deg)) translateX(90px); /* Adjust for smaller size */
+  }
 }
